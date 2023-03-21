@@ -22,6 +22,8 @@ void push(stack_t **stack, unsigned int n)
 	if (*stack)
 		(*stack)->prev = new;
 	*stack = new;
+
+	count++;
 }
 
 /**
