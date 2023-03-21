@@ -1,0 +1,22 @@
+#include "monty.h"
+
+
+void (*get_op(char *s)) (stack_t **stack, unsigned int line)
+{
+	instruction_t codes[] = {
+		{"push", push},
+		{"pop", pop},
+		{"pint", pint},
+		{"pall", pall},
+		{NULL, NULL}
+	};
+	int i;
+
+	for (i = 0; codes[i].opcode != NULL; i++)
+	{
+		if (strcmp(codes[i].opcode, s) == 0)
+			return (codes[i].f);
+	}
+
+	return (NULL);
+}
