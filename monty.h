@@ -48,7 +48,7 @@ int _atoi(char *s, int *valid);
 void free_arr(char **arr);
 void free_stack(stack_t *top);
 void swap(stack_t **stack, unsigned int line_number);
-int valid_count(stack_t **stack);
+void validate(stack_t **stack, char *opcode, int line);
 void add(stack_t **stack, unsigned int line_number);
 void nop(stack_t **stack, unsigned int line_number);
 void sub(stack_t **stack, unsigned int line_number);
