@@ -53,7 +53,8 @@ char **tokenize(char *str, const char *delim)
 		return (NULL);
 
 	copy = _strdup(str);
-	token = strtok(copy, "\n");
+	token = strtok(copy, "\n"); /* removes new lines */
+	token = strtok(token, "\t"); /* removes taps */
 	token = strtok(token, delim);
 	while (token != NULL)
 	{
