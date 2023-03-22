@@ -62,3 +62,25 @@ void add(stack_t **stack, unsigned int line)
  */
 void nop(stack_t **stack __attribute__((unused)),
 		unsigned int line __attribute__((unused))) {}
+
+/**
+ * sub - substracte the top element from the second to element
+ * @stack: a pointer to the stack
+ * @line: the line number of the operation
+ */
+void sub(stack_t **stack, unsigned int line)
+{
+	int top;
+	stack_t *p = *stack;
+
+	if (!valid_count(stack))
+	{
+		fprintf(stderr, "L%i: can't sub, stack too short\n", line);
+		exit(EXIT_FAILURE);
+	}
+	top = p->n;
+	p = p->next;
+	p->n = (p->n) - top;
+	pop(stack, 0);
+}
+
