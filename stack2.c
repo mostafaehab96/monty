@@ -34,3 +34,23 @@ void swap(stack_t **stack, unsigned int line)
 	p->n = (p->next)->n;
 	(p->next)->n = tmp;
 }
+
+/**
+ * add - adds the top 2 elements in the stack in one element
+ * @stack: a pointer to the stack
+ * @line: line number of the operation
+ */
+void add(stack_t **stack, unsigned int line)
+{
+	int sum = 0;
+	stack_t *p = *stack;
+
+	if (!valid_count(stack))
+	{
+		fprintf(stderr, "L%i: can't add, stack too short\n", line);
+		exit(EXIT_FAILURE);
+	}
+	sum += p->n + (p->next)->n;
+	(p->next)->n = sum;
+	pop(stack, 0);
+}
