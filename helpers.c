@@ -139,7 +139,7 @@ int _atoi(char *s, int *valid)
 		return (0);
 	}
 	n = atoi(s);
-	i = s[0] == '-' ? 1: 0;
+	i = s[0] == '-' ? 1 : 0;
 	for (; s[i] != '\0'; i++)
 	{
 		if (!isdigit(s[i]))
@@ -148,7 +148,7 @@ int _atoi(char *s, int *valid)
 			return (0);
 		}
 	}
-	
+
 	*valid = 1;
 	return (n);
 }
