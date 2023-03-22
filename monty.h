@@ -52,5 +52,6 @@ void validate(stack_t **stack, char *opcode, int line);
 void add(stack_t **stack, unsigned int line_number);
 void nop(stack_t **stack, unsigned int line_number);
 void sub(stack_t **stack, unsigned int line_number);
+void div_f(stack_t **stack, unsigned int line_number);
 
 #endif
