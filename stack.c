@@ -83,3 +83,19 @@ void pint(stack_t **stack, unsigned int line)
 
 	printf("%i\n", (*stack)->n);
 }
+
+/**
+ * free_stack - frees a stack
+ * @top: the top of the stack
+ */
+void free_stack(stack_t *top)
+{
+	if (!top)
+		return;
+	while (top->next)
+	{
+		top = top->next;
+		free(top->prev);
+	}
+	free(top);
+}

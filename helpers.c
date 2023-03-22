@@ -86,6 +86,11 @@ void run(char **ops, stack_t **stack, unsigned int line_number)
 	if (ops == NULL)
 		return;
 	opcode = ops[0];
+	if (opcode == NULL)
+	{
+		free_arr(ops);
+		return;
+	}
 	arg = ops[1];
 	if (strcmp(opcode, "push") == 0)
 	{
@@ -125,17 +130,29 @@ void run(char **ops, stack_t **stack, unsigned int line_number)
 int _atoi(char *s, int *valid)
 {
 	int i;
+	int n;
 
-	for (i = 0; s[i] != '\0'; i++)
+	if (s == NULL)
 	{
-		if (!isdigit(s[i]))
+		*valid = 0;
+		return (0);
+	}
+	n = atoi(s);
+	if (n != 0)
+		*valid = 1;
+	else
+	{
+		for (i = 0; s[i] != '\0'; i++)
 		{
-			*valid = 0;
-			return (0);
+			if (!isdigit(s[i]))
+			{
+				*valid = 0;
+				return (0);
+			}
 		}
 	}
 	*valid = 1;
-	return (atoi(s));
+	return (n);
 }
 
 /**

@@ -46,5 +46,6 @@ char **tokenize(char *str, const char *delim);
 void run(char **ops, stack_t **stack, unsigned int line_number);
 int _atoi(char *s, int *valid);
 void free_arr(char **arr);
+void free_stack(stack_t *top);
 
 #endif

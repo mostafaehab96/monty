@@ -30,15 +30,15 @@ int main(int argc, char *argv[])
 		fprintf(stderr, "Error: Can't open file %s\n", file_name);
 		exit(EXIT_FAILURE);
 	}
-	while (!feof(fp))
+	while (fgets(buffer, BUFFERSIZE, fp) != NULL)
 	{
 		line_number++;
-		fgets(buffer, BUFFERSIZE, fp);
 		ops = tokenize(buffer, " ");
 		run(ops, &top, line_number);
 	}
 
 	fclose(fp);
+	free_stack(top);
 
 
 	return (0);
