@@ -47,5 +47,7 @@ void run(char **ops, stack_t **stack, unsigned int line_number);
 int _atoi(char *s, int *valid);
 void free_arr(char **arr);
 void free_stack(stack_t *top);
+void swap(stack_t **stack, unsigned int line_number);
+int valid_count(stack_t **stack);
 
 #endif

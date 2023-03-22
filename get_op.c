@@ -12,6 +12,7 @@ void (*get_op(char *s)) (stack_t **stack, unsigned int line)
 		{"pop", pop},
 		{"pint", pint},
 		{"pall", pall},
+		{"swap", swap},
 		{NULL, NULL}
 	};
 	int i;
