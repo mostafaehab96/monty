@@ -6,8 +6,6 @@
 #include <string.h>
 #include <ctype.h>
 
-extern int count;
-extern int line_number;
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -45,7 +43,7 @@ void pall(stack_t **stack, unsigned int n);
 void pint(stack_t **stack, unsigned int line);
 void (*get_op(char *s)) (stack_t **stack, unsigned int line);
 char **tokenize(char *str, const char *delim);
-void run(char **ops, stack_t **stack);
+void run(char **ops, stack_t **stack, unsigned int line_number);
 int _atoi(char *s, int *valid);
 void free_arr(char **arr);
 

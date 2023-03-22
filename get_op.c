@@ -1,6 +1,10 @@
 #include "monty.h"
 
-
+/**
+ * get_op - gets the right function to use from opcode
+ * @s: the opcode
+ * Return: a function pointer to the right function
+ */
 void (*get_op(char *s)) (stack_t **stack, unsigned int line)
 {
 	instruction_t codes[] = {

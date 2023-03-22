@@ -1,7 +1,5 @@
 #include "monty.h"
 #define BUFFERSIZE 1024
-int count = 0;
-int line_number = 0;
 
 /**
  * main - entry point of the program
@@ -17,6 +15,7 @@ int main(int argc, char *argv[])
 	char buffer[BUFFERSIZE];
 	char *file_name;
 	char **ops;
+	unsigned int line_number;
 
 	if (argc != 2)
 	{
@@ -36,7 +35,7 @@ int main(int argc, char *argv[])
 		line_number++;
 		fgets(buffer, BUFFERSIZE, fp);
 		ops = tokenize(buffer, " ");
-		run(ops, &top);
+		run(ops, &top, line_number);
 	}
 
 	fclose(fp);

@@ -74,9 +74,10 @@ char **tokenize(char *str, const char *delim)
  * @ops: array of strings containing the line of monty
  * byte code space separated
  * @stack: a pointer to a stack to perform operations on it
+ * @line_number: the line number in monty file
  */
 
-void run(char **ops, stack_t **stack)
+void run(char **ops, stack_t **stack, unsigned int line_number)
 {
 	char *opcode, *arg;
 	void (*op)(stack_t **stack, unsigned int line);
