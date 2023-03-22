@@ -33,6 +33,8 @@ int main(int argc, char *argv[])
 	while (fgets(buffer, BUFFERSIZE, fp) != NULL)
 	{
 		line_number++;
+		if (buffer[0] == '#')
+			continue;
 		ops = tokenize(buffer, " ");
 		run(ops, &top, line_number);
 	}
