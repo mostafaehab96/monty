@@ -139,19 +139,16 @@ int _atoi(char *s, int *valid)
 		return (0);
 	}
 	n = atoi(s);
-	if (n != 0)
-		*valid = 1;
-	else
+	i = s[0] == '-' ? 1: 0;
+	for (; s[i] != '\0'; i++)
 	{
-		for (i = 0; s[i] != '\0'; i++)
+		if (!isdigit(s[i]))
 		{
-			if (!isdigit(s[i]))
-			{
-				*valid = 0;
-				return (0);
-			}
+			*valid = 0;
+			return (0);
 		}
 	}
+	
 	*valid = 1;
 	return (n);
 }
