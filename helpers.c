@@ -65,6 +65,15 @@ char **tokenize(char *str, const char *delim)
 		token = strtok(NULL, delim);
 	}
 	words[i] = NULL;
+	if (words[0])
+	{
+		if (words[0][0] == '#')
+		{
+			free(copy);
+			free_arr(words);
+			return (NULL);
+		}
+	}
 	free(copy);
 	return (words);
 }
