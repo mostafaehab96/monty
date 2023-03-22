@@ -143,7 +143,8 @@ int _atoi(char *s, int *valid)
 		*valid = 1;
 	else
 	{
-		for (i = 0; s[i] != '\0'; i++)
+		i = s[0] == '-' ? 1: 0;
+		for (;s[i] != '\0'; i++)
 		{
 			if (!isdigit(s[i]))
 			{
