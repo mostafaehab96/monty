@@ -21,6 +21,7 @@ void (*get_op(char *s)) (stack_t **stack, unsigned int line)
 		{"mod", mod},
 		{"pchar", pchar},
 		{"pstr", pstr},
+		{"rotl", rotl},
 		{NULL, NULL}
 	};
 	int i;
