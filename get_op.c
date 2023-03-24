@@ -23,6 +23,8 @@ void (*get_op(char *s)) (stack_t **stack, unsigned int line)
 		{"pstr", pstr},
 		{"rotl", rotl},
 		{"rotr", rotr},
+		{"stack", stack},
+		{"queue", queue},
 		{NULL, NULL}
 	};
 	int i;

@@ -111,8 +111,10 @@ void run(char **ops, stack_t **stack, unsigned int line_number)
 			free_arr(ops);
 			exit(EXIT_FAILURE);
 		}
-
-		push(stack, n);
+		if (is_stack)
+			push(stack, n);
+		else
+			push_q(stack, n);
 	}
 	else
 	{
